@@ -57,7 +57,7 @@ html {
 }
 
 body {
-  background-color: #1c1c1c;
+  background-color: #1C1B1B;
   /* This makes dealing with the sizes of elements much easier, 
   	and generally eliminates a number of pitfalls you can stumble on
   	 while laying out your content. */
@@ -81,7 +81,7 @@ a, button {
 }
 
 body {
-  color: #ececec;
+  color: #DEDED3;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(1.4rem, 4.5vw, 1.6rem);
   font-weight: 400;
