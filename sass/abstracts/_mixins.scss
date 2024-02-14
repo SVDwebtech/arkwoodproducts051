@@ -15,7 +15,8 @@ $breakpoint argument choices
 	- big-desk and >  1800 +		: min-width: 112.5em (1800/16)
 
 ORDER: base + typography > general layout + grid > page layout > components
-*//////////////////////////////////////////////////////////////
+*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @mixin respond($breakpoint) {
 	
 	@if $breakpoint == tab-port {
@@ -45,4 +46,21 @@ ORDER: base + typography > general layout + grid > page layout > components
 			@content;
 		}
 	}
+}
+////////////////////     DISPLAY FLEX COLUMN     /////////////////////////////////////////////////////////////////////
+@mixin displayFlexColumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+////////////////////     DISPLAY FLEX ROW     ///////////////////////////////////////////////////////////////////////
+@mixin displayFlexRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
 }

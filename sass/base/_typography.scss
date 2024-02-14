@@ -5,3 +5,16 @@ body {
 	font-weight: 400;
 	line-height: 1.5;
 }
+
+.headingH3 {
+	color: $cp-darkBrown;
+	font-weight: 900;
+
+}
+
+.paragraph {
+	&--figParagraph {
+		color: $cf-darkGreen;
+		text-align: center;
+	}
+}

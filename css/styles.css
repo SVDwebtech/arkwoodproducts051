@@ -88,12 +88,48 @@ body {
   line-height: 1.5;
 }
 
+.headingH3 {
+  color: #302318;
+  font-weight: 900;
+}
+
+.paragraph--figParagraph {
+  color: #263322;
+  text-align: center;
+}
+
 .text-align-center {
   text-align: center;
 }
 
 .website-section-bottom-margin {
   margin-bottom: 5rem;
+}
+
+.footer {
+  background-color: #7C8D72;
+}
+.footer__logoFigure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 1rem;
+  padding: 1rem;
+}
+.footer__logoImage {
+  display: block;
+  width: 20rem;
+  height: auto;
+}
+.footer__logoFigcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.25rem;
 }
 
 .header h1 {

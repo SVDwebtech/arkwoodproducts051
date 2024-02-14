@@ -1,2 +1,17 @@
 .footer {
+      background-color: $cp-lightGreen;
+      &__logoFigure {
+            @include displayFlexColumn;
+            gap: 1rem;
+            padding: 1rem;
+      }
+      &__logoImage {
+            display: block;
+            width: 20rem;
+            height: auto;
+      }
+      &__logoFigcaption {
+            @include displayFlexColumn;
+            gap: .25rem;
+      }
 }
