@@ -1,3 +1,12 @@
+/* 
+HeadingH1 Font-family: "Kaushan Script", cursive; Font-weights: 400;
+HeadingH2 Font-family: "Acme", sans-serif; Font-weights: 400;
+HeadingH3 Font-family: "Roboto", sans-serif; Font-weights: 500, 700;
+HeadingH4&5 Font-family: "PT Sans Narrow", sans-serif; Font-weights: 400, 700;    
+BodyText Font-family: "Lato", sans-serif; Font-weights: 400, 500, 700; 
+*/
+    
+
 body {
 	color: $cf-white;
 	font-family: Arial, Helvetica, sans-serif;
@@ -6,15 +15,22 @@ body {
 	line-height: 1.5;
 }
 
-.headingH3 {
-	color: $cp-darkBrown;
-	font-weight: 900;
+.headingH2 {
+	&--figHeading {
+		color: $cp-darkBrown;
+		font-family: "Acme", sans-serif;
+		font-weight: 700;
+	}
+}
 
+.headingH3 {
 }
 
 .paragraph {
 	&--figParagraph {
-		color: $cf-darkGreen;
+		color: $cf-white;
+		font-family: "Lato", sans-serif;
+		font-weight: 400;
 		text-align: center;
 	}
 }
