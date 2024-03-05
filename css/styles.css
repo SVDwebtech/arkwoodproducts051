@@ -103,7 +103,7 @@ body {
 }
 
 .headingH3 {
-  color: #263322;
+  color: #302318;
   font-family: "Roboto", sans-serif;
   font-size: clamp(1.8rem, 5.7vw, 2rem);
   font-weight: 700;
@@ -121,14 +121,15 @@ body {
   text-align: center;
 }
 
-.footer__footerDev {
-  font-size: clamp(1.2rem, 4.5vw, 1.4rem);
-}
-.footer__footerDevName {
-  color: #302318;
-  font-weight: 900;
+.footer__footerLink, .footer__footerDevName {
+  color: #263322;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 400;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+.footer__footerDev {
+  font-size: clamp(1.2rem, 4.5vw, 1.4rem);
 }
 
 .text-align-center {
@@ -192,6 +193,14 @@ body {
 .footer__footerSocialMediaIcon {
   width: 3rem;
   height: 3rem;
+  margin-top: 0.75rem;
+}
+.footer__footerNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .header h1 {

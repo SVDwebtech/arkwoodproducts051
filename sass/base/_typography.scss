@@ -23,7 +23,7 @@ body {
 	}
 }
 .headingH3 {
-	color: $cf-darkGreen;
+	color: $cf-darkBrown;
 	font-family: "Roboto", sans-serif; 
 	font-size: clamp(1.8rem, 5.7vw, 2rem);;
 	font-weight: 700;
@@ -45,13 +45,14 @@ body {
 }
 
 .footer {
-	&__footerDev {
-		font-size: clamp(1.2rem, 4.5vw, 1.4rem);
-	}
-	&__footerDevName {
-		color: $cf-darkBrown;
-		font-weight: 900;
+	&__footerLink, &__footerDevName {
+		color: $cf-darkGreen;
+		font-family: "PT Sans Narrow", sans-serif; 
+		font-weight: 400;
 		text-decoration: underline;
 		text-underline-offset: 2px;
+	}
+	&__footerDev {
+		font-size: clamp(1.2rem, 4.5vw, 1.4rem);
 	}
 }
