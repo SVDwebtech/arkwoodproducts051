@@ -8,7 +8,7 @@
             width: 100%;
             height: 1px;
             padding: 0;
-            margin: 1rem 0;
+            margin: 1rem 0 0;
       }
       &__logoFigure {
             @include displayFlexColumn;
@@ -23,5 +23,16 @@
       &__logoFigcaption {
             @include displayFlexColumn;
             gap: .25rem;
+      }
+      &__footerSocialMedia {
+            @include displayFlexColumn;
+      }
+      &__footerSocialMediaIconContainer {
+            @include displayFlexRow;
+            gap: 3rem;
+      }
+      &__footerSocialMediaIcon {
+            width: 3rem;
+            height: 3rem;
       }
 }
