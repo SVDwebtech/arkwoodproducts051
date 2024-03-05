@@ -141,6 +141,7 @@ body {
 
 .footer {
   background-color: #7C8D72;
+  padding: 1rem;
 }
 .footer__footerHr {
   background: linear-gradient(to right, transparent 5%, rgba(48, 35, 24, 0.25) 20%, #302318, rgba(48, 35, 24, 0.25) 80%, transparent 95%);
