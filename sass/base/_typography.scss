@@ -36,21 +36,25 @@ body {
 
 
 .paragraph {
-	&--figParagraph {
-		color: $cf-white;
-		font-family: "Lato", sans-serif;
-		font-weight: 400;
-		text-align: center;
-	}
+	
 }
 
 .footer {
-	&__footerLink, &__footerDevName {
+	color: $cf-darkGreen;
+	font-family: "Lato", sans-serif; 
+	font-weight: 500;
+	&__footerAddressBox {
+		font-style: normal;
+	}
+	&__footerLink, &__footerContactDetailsLink, &__footerDevName {
 		color: $cf-darkGreen;
 		font-family: "PT Sans Narrow", sans-serif; 
-		font-weight: 400;
+		font-weight: 500;
 		text-decoration: underline;
 		text-underline-offset: 2px;
+	}
+	&__footerContactDetailsItem {
+		font-weight: 700;
 	}
 	&__footerDev {
 		font-size: clamp(1.2rem, 4.5vw, 1.4rem);

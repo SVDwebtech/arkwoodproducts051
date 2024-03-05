@@ -45,4 +45,8 @@
             @include displayFlexColumn;
             gap: .5rem;
       }
+      &__footerContactDetailsBox {
+            @include displayFlexColumn;
+            gap: .5rem;
+      }
 }

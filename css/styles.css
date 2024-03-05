@@ -114,19 +114,23 @@ body {
   text-underline-offset: 2px;
 }
 
-.paragraph--figParagraph {
-  color: #DEDED3;
+.footer {
+  color: #263322;
   font-family: "Lato", sans-serif;
-  font-weight: 400;
-  text-align: center;
+  font-weight: 500;
 }
-
-.footer__footerLink, .footer__footerDevName {
+.footer__footerAddressBox {
+  font-style: normal;
+}
+.footer__footerLink, .footer__footerContactDetailsLink, .footer__footerDevName {
   color: #263322;
   font-family: "PT Sans Narrow", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+.footer__footerContactDetailsItem {
+  font-weight: 700;
 }
 .footer__footerDev {
   font-size: clamp(1.2rem, 4.5vw, 1.4rem);
@@ -205,6 +209,14 @@ body {
   gap: 0.5rem;
 }
 .footer__footerLegalNoticeBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.5rem;
+}
+.footer__footerContactDetailsBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
