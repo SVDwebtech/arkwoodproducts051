@@ -102,6 +102,18 @@ body {
   font-weight: 700;
 }
 
+.headingH3 {
+  color: #263322;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.8rem, 5.7vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .paragraph--figParagraph {
   color: #DEDED3;
   font-family: "Lato", sans-serif;
@@ -116,7 +128,7 @@ body {
   color: #302318;
   font-weight: 900;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 2px;
 }
 
 .text-align-center {

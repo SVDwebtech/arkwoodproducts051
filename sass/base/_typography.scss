@@ -15,7 +15,6 @@ body {
 	line-height: 1.6;
 	text-align: center;
 }
-
 .headingH2 {
 	&--figHeading {
 		color: $cp-darkBrown;
@@ -23,9 +22,18 @@ body {
 		font-weight: 700;
 	}
 }
-
 .headingH3 {
+	color: $cf-darkGreen;
+	font-family: "Roboto", sans-serif; 
+	font-size: clamp(1.8rem, 5.7vw, 2rem);;
+	font-weight: 700;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: underline;
+	text-underline-offset: 2px;
 }
+
 
 .paragraph {
 	&--figParagraph {
@@ -44,6 +52,6 @@ body {
 		color: $cf-darkBrown;
 		font-weight: 900;
 		text-decoration: underline;
-		text-underline-offset: 3px;
+		text-underline-offset: 2px;
 	}
 }
