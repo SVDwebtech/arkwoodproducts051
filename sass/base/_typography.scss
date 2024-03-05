@@ -16,11 +16,7 @@ body {
 	text-align: center;
 }
 .headingH2 {
-	&--figHeading {
-		color: $cp-darkBrown;
-		font-family: "Acme", sans-serif;
-		font-weight: 700;
-	}
+	
 }
 .headingH3 {
 	color: $cf-darkBrown;
@@ -43,6 +39,12 @@ body {
 	color: $cf-darkGreen;
 	font-family: "Lato", sans-serif; 
 	font-weight: 500;
+	&__footerFigHeading {
+		color: $cp-darkBrown;
+		font-family: "Acme", sans-serif;
+		font-size: clamp(2.2rem, 7vw, 2.4rem);
+		font-weight: 900;
+	}
 	&__footerAddressBox {
 		font-style: normal;
 	}
