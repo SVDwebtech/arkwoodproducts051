@@ -26,6 +26,7 @@
       }
       &__footerSocialMedia {
             @include displayFlexColumn;
+            gap: .5rem;
       }
       &__footerSocialMediaIconContainer {
             @include displayFlexRow;
@@ -38,5 +39,10 @@
       }
       &__footerNav {
             @include displayFlexColumn;
+            gap: .5rem;
+      }
+      &__footerLegalNoticeBox {
+            @include displayFlexColumn;
+            gap: .5rem;
       }
 }
