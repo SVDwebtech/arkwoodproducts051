@@ -1,0 +1,21 @@
+.sidebar {
+      @include displayFlexColumn;
+      padding: 5rem 1rem;
+      &__sidebarContentWrapper {
+            @include displayFlexColumn;
+            gap: 0rem;
+            width: min(100%, 45rem);
+      }
+      &__socialMedia {
+            @include displayFlexColumn;
+            gap: 1rem;
+      }
+      &__sidebarSocialMediaIconContainer {
+           @include displayFlexRow;
+           gap: 3rem; 
+      }
+      &__sidebarSocialMediaIcon {
+            width: 3.5rem;
+            height: 3.5rem;
+      }
+}

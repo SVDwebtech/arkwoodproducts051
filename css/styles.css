@@ -57,7 +57,7 @@ html {
 }
 
 body {
-  background-color: #1C1B1B;
+  background-color: #DEDED3;
   /* This makes dealing with the sizes of elements much easier, 
   	and generally eliminates a number of pitfalls you can stumble on
   	 while laying out your content. */
@@ -88,12 +88,24 @@ HeadingH4&5 Font-family: "PT Sans Narrow", sans-serif; Font-weights: 400, 700;
 BodyText Font-family: "Lato", sans-serif; Font-weights: 400, 500, 700; 
 */
 body {
-  color: #DEDED3;
+  color: #1C1B1B;
   font-family: "Lato", sans-serif;
   font-size: clamp(1.4rem, 4.5vw, 1.6rem);
   font-weight: 400;
   line-height: 1.6;
   text-align: center;
+}
+
+.headingH2 {
+  color: #302318;
+  font-family: "Acme", sans-serif;
+  font-size: clamp(2.6rem, 6.2vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .headingH3 {
@@ -144,6 +156,44 @@ body {
   margin-bottom: 5rem;
 }
 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 1rem;
+}
+.sidebar__sidebarContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0rem;
+  width: min(100%, 45rem);
+}
+.sidebar__socialMedia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 1rem;
+}
+.sidebar__sidebarSocialMediaIconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 3rem;
+}
+.sidebar__sidebarSocialMediaIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -151,7 +201,7 @@ body {
   align-items: center;
   gap: 1rem;
   background-color: #7C8D72;
-  padding: 5rem 1rem 0;
+  padding: 5rem 1rem 1rem;
 }
 .footer__footerContentWrapper {
   display: flex;

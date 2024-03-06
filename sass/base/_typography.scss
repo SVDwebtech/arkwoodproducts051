@@ -8,7 +8,7 @@ BodyText Font-family: "Lato", sans-serif; Font-weights: 400, 500, 700;
     
 
 body {
-	color: $cf-white;
+	color: $cf-black;
 	font-family: "Lato", sans-serif;
 	font-size: clamp(1.4rem, 4.5vw, 1.6rem);
 	font-weight: 400;
@@ -16,7 +16,15 @@ body {
 	text-align: center;
 }
 .headingH2 {
-	
+	color: $cf-darkBrown;
+	font-family: "Acme", sans-serif; 
+	font-size: clamp(2.6rem, 6.2vw, 2.8rem);;
+	font-weight: 900;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: underline;
+	text-underline-offset: 2px;
 }
 .headingH3 {
 	color: $cf-darkBrown;
