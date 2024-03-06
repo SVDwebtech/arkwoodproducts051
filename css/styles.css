@@ -422,4 +422,71 @@ body {
   z-index: 200;
 }
 
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 3rem;
+}
+.products__productsSteakBoardsBox, .products__productsKitchenWorkTopsBox, .products__productsGardenGatesBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 1.5rem;
+}
+.products__productsImg {
+  display: block;
+  background-color: #DEDED3;
+  border: 2px solid #263322;
+  box-shadow: 0 0 15px 1px rgba(38, 51, 34, 0.45);
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+.products__productsImgWoodStack {
+  width: 70%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 100;
+}
+.products__productsImgGate {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  z-index: 200;
+}
+.products__productsImgFactory {
+  width: 40%;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  z-index: 100;
+}
+.products__productsImgKitchen {
+  width: 30%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  z-index: 200;
+}
+.products__productsImgToolWall {
+  width: 70%;
+  position: absolute;
+  top: 13%;
+  left: 10%;
+  z-index: 100;
+}
+.products__productsImgVarnish {
+  width: 30%;
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  z-index: 200;
+}
+
 /*# sourceMappingURL=styles.css.map */
