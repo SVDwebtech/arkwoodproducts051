@@ -336,4 +336,90 @@ body {
   color: red;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 1rem 0rem;
+}
+.main__mainContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 5rem;
+  width: min(100%, 45rem);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.about__aboutImgContainer {
+  position: relative;
+  width: 100%;
+  height: 70vw;
+}
+@media (min-width: 500px) {
+  .about__aboutImgContainer {
+    height: 33rem;
+  }
+}
+.about__aboutImg {
+  display: block;
+  background-color: #DEDED3;
+  border: 2px solid #263322;
+  box-shadow: 0 0 15px 1px rgba(38, 51, 34, 0.45);
+  width: 45%;
+  height: auto;
+  padding: 1rem;
+}
+.about__aboutImgWoodStack {
+  width: 70%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 100;
+}
+.about__aboutImgGate {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  z-index: 200;
+}
+.about__aboutImgFactory {
+  width: 40%;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  z-index: 100;
+}
+.about__aboutImgKitchen {
+  width: 30%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  z-index: 200;
+}
+.about__aboutImgToolWall {
+  width: 70%;
+  position: absolute;
+  top: 13%;
+  left: 10%;
+  z-index: 100;
+}
+.about__aboutImgVarnish {
+  width: 30%;
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  z-index: 200;
+}
+
 /*# sourceMappingURL=styles.css.map */
