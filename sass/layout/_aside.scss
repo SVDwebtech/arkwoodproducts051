@@ -3,12 +3,12 @@
       padding: 5rem 1rem;
       &__sidebarContentWrapper {
             @include displayFlexColumn;
-            gap: 0rem;
+            gap: 5rem;
             width: min(100%, 45rem);
       }
-      &__socialMedia {
+      &__socialMedia, &__contact {
             @include displayFlexColumn;
-            gap: 1rem;
+            gap: 2rem;
       }
       &__sidebarSocialMediaIconContainer {
            @include displayFlexRow;
@@ -17,5 +17,20 @@
       &__sidebarSocialMediaIcon {
             width: 3.5rem;
             height: 3.5rem;
+      }
+      &__sidebarContactDetailsBox {
+            @include displayFlexColumn;
+            gap: .5rem;
+            width: 100%;
+      }
+      &__sidebarGoogleMapsBox {
+            @include displayFlexColumn;
+            gap: 1rem;
+            width: 100%;
+      }
+      &__sidebarIframeGoogle {
+            display: block;
+            width: min(100%, 45rem);
+            height: auto;
       }
 }

@@ -23,8 +23,6 @@ body {
 	letter-spacing: 1px;
 	line-height: 1.2;
 	text-align: center;
-	text-decoration: underline;
-	text-underline-offset: 2px;
 }
 .headingH3 {
 	color: $cf-darkBrown;
@@ -34,13 +32,31 @@ body {
 	letter-spacing: 1px;
 	line-height: 1.2;
 	text-align: center;
-	text-decoration: underline;
-	text-underline-offset: 2px;
+	&--contactDetails, &--contactDetailsFooter {
+		font-style: normal;
+	}
+	&--socialMedia, &--legalNotice, &--contactDetailsFooter {
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
 }
 
 
 .paragraph {
 	
+}
+
+.sidebar {
+	&__sidebarContactDetailsItem {
+		font-style: normal;
+		font-weight: 700;
+	}
+	&__sidebarContactDetailsLink {
+		color: $cf-black;
+		font-weight: 500;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
 }
 
 .footer {
