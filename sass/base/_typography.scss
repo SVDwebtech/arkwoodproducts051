@@ -123,7 +123,10 @@ body {
 		text-underline-offset: 2px;
 	}
 	&__footerContactDetailsItem {
+		color: $cf-black;
+		font-style: normal;
 		font-weight: 700;
+
 	}
 	&__footerDev {
 		font-size: clamp(1.2rem, 4.5vw, 1.4rem);

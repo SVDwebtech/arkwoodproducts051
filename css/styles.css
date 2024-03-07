@@ -238,6 +238,8 @@ body {
   text-underline-offset: 2px;
 }
 .footer__footerContactDetailsItem {
+  color: #1C1B1B;
+  font-style: normal;
   font-weight: 700;
 }
 .footer__footerDev {
