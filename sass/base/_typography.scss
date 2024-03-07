@@ -65,19 +65,30 @@ body {
 	&--primary-brown {
 		color: $cf-black;
 		font-family: "Roboto", sans-serif; 
-		font-size: clamp(1.6rem, 5.7vw, 1.8rem);;
+		font-size: clamp(1.6rem, 5.7vw, 1.8rem);
 		font-weight: 700;
 		letter-spacing: 1px;
 		line-height: 1.2;
 		text-align: center;
 	}
 }
-
-
-.paragraph {
-	
+.logo__text {
+	font-family: "Kaushan Script", cursive;
+	font-size: clamp(1.6rem, 5vw, 1.8rem);;
+	font-weight: 900;
+	letter-spacing: 2px;
+	line-height: 1;
+	text-align: left;
 }
-
+.navList__navLink {
+	color: $cf-darkGreen;
+	font-family: "Roboto", sans-serif; 
+	font-size: clamp(1.6rem, 5.7vw, 1.8rem);
+	font-weight: 700;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	text-align: center;
+}
 .sidebar {
 	&__sidebarContactDetailsItem {
 		font-style: normal;
