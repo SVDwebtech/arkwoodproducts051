@@ -1,5 +1,45 @@
 .header {    
-      h1 {
-            color: red;
+      
+}
+
+.hero {
+      @include displayFlexColumn;
+      background: url("../../img/WebsiteImages/ArkWoodProductsHeroBackGround.webp");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      // width: min(100%,45rem);
+      min-height: 95vh;
+      padding: 1rem;
+      &__heroContentWrapper {
+            @include displayFlexColumn;
+            width: min(100%,45rem);
+      }
+      &__heroPrimaryHeading {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-75%);
+      }
+      &__heroHeadingItem {
+            display: block;
+      }
+      &__headingLogoBox {
+            @include displayFlexRow;
+            width: 75%;
+            height: 15rem;
+            margin: 0 auto;
+            position: relative;
+      }
+      &__heroHeadingLogoImg {
+            width: 13rem;
+            height: 13rem;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-5%);
+      }
+      &__btnWrapper {
+            padding: 1rem;
       }
 }

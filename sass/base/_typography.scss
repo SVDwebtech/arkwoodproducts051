@@ -15,6 +15,27 @@ body {
 	line-height: 1.6;
 	text-align: center;
 }
+.headingH1 {
+	&__primaryHeading {
+		font-family: "Kaushan Script", cursive;
+		font-size: 3.8rem;
+		font-weight: 900;
+		letter-spacing: 5px;
+		line-height: 1.2;
+		text-align: left;
+	}
+	&__values, &__byline {
+		color: $cf-black;
+		font-family: "Lato", sans-serif;
+		font-size: clamp(1.6rem, 4.5vw, 1.8rem);
+		font-weight: 700;
+		line-height: 1.6;
+		text-align: center;
+	}
+	&__byline {
+		font-size: clamp(1.8rem, 4.5vw, 2rem);
+	}
+}
 .headingH2 {
 	color: $cf-darkBrown;
 	font-family: "Acme", sans-serif; 
@@ -38,6 +59,17 @@ body {
 	&--socialMedia, &--legalNotice, &--contactDetailsFooter {
 		text-decoration: underline;
 		text-underline-offset: 2px;
+	}
+}
+.btn {
+	&--primary-brown {
+		color: $cf-black;
+		font-family: "Roboto", sans-serif; 
+		font-size: clamp(1.6rem, 5.7vw, 1.8rem);;
+		font-weight: 700;
+		letter-spacing: 1px;
+		line-height: 1.2;
+		text-align: center;
 	}
 }
 
