@@ -118,7 +118,7 @@ body {
 	&__footerLink, &__footerContactDetailsLink, &__footerDevName {
 		color: $cf-darkGreen;
 		font-family: "PT Sans Narrow", sans-serif; 
-		font-weight: 500;
+		font-weight: 700;
 		text-decoration: underline;
 		text-underline-offset: 2px;
 	}
@@ -127,5 +127,9 @@ body {
 	}
 	&__footerDev {
 		font-size: clamp(1.2rem, 4.5vw, 1.4rem);
+		font-weight: 700;
+	}
+	&__footerDevName {
+		color: $cf-yellow;
 	}
 }
