@@ -9,6 +9,7 @@
       &__socialMedia, &__contact {
             @include displayFlexColumn;
             gap: 2rem;
+            position: relative;
       }
       &__sidebarSocialMediaIconContainer {
            @include displayFlexRow;

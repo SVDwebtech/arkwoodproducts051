@@ -9,6 +9,7 @@
 }
 .about {
       @include displayFlexColumn;
+      position: relative;
       &__aboutImgContainer {
             position: relative;
             width: 100%;
@@ -71,6 +72,7 @@
 .products {
       @include displayFlexColumn;
       gap: 3rem;
+      position: relative;
       &__productsSteakBoardsBox, &__productsKitchenWorkTopsBox, &__productsGardenGatesBox {
             @include displayFlexColumn;
             gap: 1.5rem;

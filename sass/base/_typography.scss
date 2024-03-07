@@ -36,6 +36,15 @@ body {
 		font-size: clamp(1.8rem, 4.5vw, 2rem);
 	}
 }
+.logoLink {
+	color: $cp-darkGreen;
+	// font-family: "Kaushan Script", cursive;
+	// font-size: 3.8rem;
+	// font-weight: 900;
+	// letter-spacing: 5px;
+	// line-height: 1.2;
+	// text-align: left;
+}
 .headingH2 {
 	color: $cf-darkBrown;
 	font-family: "Acme", sans-serif; 

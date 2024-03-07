@@ -1,0 +1,10 @@
+.linkDiv {
+      position: absolute;
+      left: 0;
+      &--home {
+            top: 0;
+      }
+      &--socialMedia, &--contact, &--products, &--about {
+            top: -120px;
+      }
+}

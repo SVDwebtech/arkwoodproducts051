@@ -149,6 +149,10 @@ body {
   font-size: clamp(1.8rem, 4.5vw, 2rem);
 }
 
+.logoLink {
+  color: #263322;
+}
+
 .headingH2 {
   color: #302318;
   font-family: "Acme", sans-serif;
@@ -283,6 +287,17 @@ body {
 }
 .btn--primary-brown {
   background-color: #97734A;
+}
+
+.linkDiv {
+  position: absolute;
+  left: 0;
+}
+.linkDiv--home {
+  top: 0;
+}
+.linkDiv--socialMedia, .linkDiv--contact, .linkDiv--products, .linkDiv--about {
+  top: -120px;
 }
 
 .logo {
@@ -506,6 +521,7 @@ body {
   align-items: center;
   gap: 1rem;
   gap: 2rem;
+  position: relative;
 }
 .sidebar__sidebarSocialMediaIconContainer {
   display: flex;
@@ -644,6 +660,10 @@ body {
   width: 100%;
 }
 
+.header {
+  position: relative;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -721,6 +741,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
 .about__aboutImgContainer {
   position: relative;
@@ -790,6 +811,7 @@ body {
   align-items: center;
   gap: 1rem;
   gap: 3rem;
+  position: relative;
 }
 .products__productsSteakBoardsBox, .products__productsKitchenWorkTopsBox, .products__productsGardenGatesBox {
   display: flex;
