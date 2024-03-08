@@ -73,7 +73,7 @@
       @include displayFlexColumn;
       gap: 3rem;
       position: relative;
-      &__productsSteakBoardsBox, &__productsKitchenWorkTopsBox, &__productsGardenGatesBox {
+      &__productsSteakBoardsBox, &__productsKitchenWorkTopsBox, &__productsGardenGatesBox, &__productsDeckingBox {
             @include displayFlexColumn;
             gap: 1.5rem;
       }

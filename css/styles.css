@@ -813,7 +813,7 @@ body {
   gap: 3rem;
   position: relative;
 }
-.products__productsSteakBoardsBox, .products__productsKitchenWorkTopsBox, .products__productsGardenGatesBox {
+.products__productsSteakBoardsBox, .products__productsKitchenWorkTopsBox, .products__productsGardenGatesBox, .products__productsDeckingBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
