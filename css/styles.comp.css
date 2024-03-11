@@ -1,0 +1,907 @@
+/*
+0px		- 		600px:			mobile 	--> Mobile First Approach (normal styles apply)
+600px		- 		900px: 			tab-port 	--> Tablet Portrait 
+900px		-		1200px:			tab-land	--> Tablet Landscape
+1200px	-		1800px:			desk		--> Desktop 
+1800px +							big-desk	--> Big Desktop
+
+REMEMBER: 1em = 16px;
+$breakpoint argument choices
+	- tab-port and >	600 --> 900 	: min-width: 37.5em (600/16)
+	- tab-land and >	900 --> 1200	: min-width: 56.25em (900/16)
+	- desk and     >	1200 --> 1800	: min-width: 75em (1200/16)
+	- big-desk and >  1800 +		: min-width: 112.5em (1800/16)
+
+ORDER: base + typography > general layout + grid > page layout > components
+*/
+@keyframes animateNavListContainerMoveIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes animateNavListContainerMoveOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes animateNavItemsMoveIn {
+  0% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes animateNavItemsMoveOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* 	1rem is equal to 10px */
+  /* 	because 10px / 10 is equal to 1rem */
+  /* 	therefore 30px is equal to 3rem */
+  /* 	the default font size of the browser is 16px */
+  /* 	10px / 16px *100 = 62.5% */
+  font-size: 62.5%;
+}
+@media (min-width: 37.5em) {
+  html {
+    /* 	11px / 16px *100 = 68.75% */
+    font-size: 68.75%;
+  }
+}
+@media (min-width: 56.25em) {
+  html {
+    /* 	12px / 16px *100 = 75% */
+    font-size: 75%;
+  }
+}
+@media (min-width: 75em) {
+  html {
+    /* 	13px / 16px *100 = 81.25% */
+    font-size: 81.25%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    /* 	15px / 16px *100 = 93.75% */
+    font-size: 93.75%;
+  }
+}
+
+body {
+  background-color: #DEDED3;
+  /* This makes dealing with the sizes of elements much easier, 
+  	and generally eliminates a number of pitfalls you can stumble on
+  	 while laying out your content. */
+  /* The width and height properties include the content, padding, and border, 
+  	but do not include the margin.  Note that padding and border will be inside 
+  	of the box. */
+  box-sizing: border-box;
+  position: relative;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+/* 
+HeadingH1 Font-family: "Kaushan Script", cursive; Font-weights: 400;
+HeadingH2 Font-family: "Acme", sans-serif; Font-weights: 400;
+HeadingH3 Font-family: "Roboto", sans-serif; Font-weights: 500, 700;
+HeadingH4&5 Font-family: "PT Sans Narrow", sans-serif; Font-weights: 400, 700;    
+BodyText Font-family: "Lato", sans-serif; Font-weights: 400, 500, 700; 
+*/
+body {
+  color: #1C1B1B;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.4rem, 4.5vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.headingH1__primaryHeading {
+  font-family: "Kaushan Script", cursive;
+  font-size: 3.8rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  line-height: 1.2;
+  text-align: left;
+}
+.headingH1__values, .headingH1__byline {
+  color: #1C1B1B;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.6rem, 4.5vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+.headingH1__byline {
+  font-size: clamp(1.8rem, 4.5vw, 2rem);
+}
+
+.logoLink {
+  color: #263322;
+}
+
+.headingH2 {
+  color: #302318;
+  font-family: "Acme", sans-serif;
+  font-size: clamp(2.6rem, 6.2vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.headingH3 {
+  color: #302318;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.8rem, 5.7vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: center;
+}
+.headingH3--contactDetails, .headingH3--contactDetailsFooter {
+  font-style: normal;
+}
+.headingH3--socialMedia, .headingH3--legalNotice, .headingH3--contactDetailsFooter {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.btn--primary-brown {
+  color: #1C1B1B;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.6rem, 5.7vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.logo__text {
+  font-family: "Kaushan Script", cursive;
+  font-size: clamp(1.6rem, 5vw, 1.8rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-align: left;
+}
+
+.navList__navLink {
+  color: #263322;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.6rem, 5.7vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.sidebar__sidebarContactDetailsItem {
+  font-style: normal;
+  font-weight: 700;
+}
+.sidebar__sidebarContactDetailsLink {
+  color: #1C1B1B;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer {
+  color: #263322;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+.footer__footerFigHeading {
+  color: #302318;
+  font-family: "Acme", sans-serif;
+  font-size: clamp(2.2rem, 7vw, 2.4rem);
+  font-weight: 900;
+}
+.footer__footerAddressBox {
+  font-style: normal;
+}
+.footer__footerLink, .footer__footerContactDetailsLink, .footer__footerDevName {
+  color: #263322;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer__footerContactDetailsItem {
+  color: #1C1B1B;
+  font-style: normal;
+  font-weight: 700;
+}
+.footer__footerDev {
+  font-size: clamp(1.2rem, 4.5vw, 1.4rem);
+  font-weight: 700;
+}
+.footer__footerDevName {
+  color: #ECBF09;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.website-section-bottom-margin {
+  margin-bottom: 5rem;
+}
+
+.btn {
+  border: 1px solid #b9b9b9;
+  border-bottom: 1px solid #4d4d4d;
+  border-right: 1px solid #4d4d4d;
+  border-radius: 0.45rem;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  width: fit-content;
+  padding: 0.6em 0.85em;
+  margin: 0 auto;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: all 0.2s;
+}
+.btn:link, .btn:visited {
+  text-decoration: none;
+  transform: translateY(0px);
+}
+.btn:active {
+  border-bottom: 1px solid #b9b9b9;
+  border-right: 1px solid #b9b9b9;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.7);
+  transform: translateY(-1px);
+}
+.btn--primary-brown {
+  background-color: #97734A;
+}
+
+.linkDiv {
+  position: absolute;
+  left: 0;
+}
+.linkDiv--home {
+  top: 0;
+}
+.linkDiv--socialMedia, .linkDiv--contact, .linkDiv--products, .linkDiv--about {
+  top: -120px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.5rem;
+}
+.logo__img {
+  display: block;
+  width: 5rem;
+  height: auto;
+}
+@media (min-width: 330px) {
+  .logo__logoBreakLine {
+    display: none;
+  }
+}
+
+.logoAndNumbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(.12rem, 3vw, 4rem);
+  position: relative;
+  z-index: 100;
+}
+
+.numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.numbers__landlineContainer, .numbers__whatsappContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.275rem;
+}
+.numbers__icon {
+  height: 14px;
+  width: 14px;
+}
+
+.contactIconsContainer {
+  order: 2;
+}
+
+.hamburgerBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  width: 3rem;
+  height: 4.6rem;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  backface-visibility: hidden;
+}
+.hamburgerBtn__hamburgerBar {
+  background-color: #DEDED3;
+  width: 100%;
+  height: 3px;
+}
+.hamburgerBtn__hamburgerBar--top, .hamburgerBtn__hamburgerBar--middle, .hamburgerBtn__hamburgerBar--bottom {
+  position: absolute;
+  left: 0;
+}
+.hamburgerBtn__hamburgerBar--top {
+  top: 32%;
+  transition: all 0.5s;
+}
+.hamburgerBtn__hamburgerBar--middle {
+  top: 50%;
+  transition: opacity 3s;
+}
+.hamburgerBtn__hamburgerBar--bottom {
+  top: 67%;
+  transition: all 0.5s;
+}
+.hamburgerBtn__hamburgerBar--transparent {
+  opacity: 0;
+  transition: all 0s;
+}
+.hamburgerBtn:hover > .hamburgerBtn__hamburgerBar--top {
+  transform: translateY(-2px);
+}
+.hamburgerBtn:hover > .hamburgerBtn__hamburgerBar--bottom {
+  transform: translateY(2px);
+}
+.navbarSection > .hamburgerBtn > .hamburgerBtn__hamburgerBar--right {
+  transform: rotate(135deg);
+  height: 4px;
+  top: 50%;
+}
+.navbarSection > .hamburgerBtn > .hamburgerBtn__hamburgerBar--left {
+  transform: rotate(-135deg);
+  height: 4px;
+  top: 50%;
+}
+
+.navList--displayNone {
+  display: none;
+}
+
+.navList--display {
+  display: flex;
+}
+
+.navList {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #DEDED3;
+  width: 100%;
+  height: 120vh;
+  margin: 0;
+  padding: 12rem 3rem;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  z-index: 0;
+}
+.navList__navItem {
+  margin-bottom: 1rem;
+}
+.navList__navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 100;
+  transition: all 0.4s;
+}
+.navList__navLink::after {
+  content: "";
+  background-color: #263322;
+  height: 2px;
+  width: 99%;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  z-index: -100;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0s;
+}
+.navList__navLink:hover::after {
+  transform: scaleX(1);
+  transition: 0.4s ease-in;
+}
+.navList__navLink:hover {
+  animation: animateNavLink 0.4s ease-in 1 forwards;
+}
+.navList .navFrame {
+  background-color: #7C8D72;
+  border-bottom: 1px solid #97734A;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.navList__icon {
+  background-color: transparent;
+  height: 24px;
+  width: 24px;
+}
+.navList__icon--rightArrow {
+  height: 16px;
+  width: 16px;
+}
+
+.navList--navListMoveIn {
+  animation: animateNavListContainerMoveIn 0.4s ease-out forwards;
+}
+
+.navList--navListMoveOut {
+  animation: animateNavListContainerMoveOut 0.4s ease-out 0.8s forwards;
+}
+
+.navItem--moveIn {
+  animation: animateNavItemsMoveIn 0.4s ease-out forwards;
+}
+
+.navItem--moveOut {
+  animation: animateNavItemsMoveOut 0.3s ease-in forwards;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 1rem;
+}
+.sidebar__sidebarContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 5rem;
+  width: min(100%, 45rem);
+}
+.sidebar__socialMedia, .sidebar__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 2rem;
+  position: relative;
+}
+.sidebar__sidebarSocialMediaIconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 3rem;
+}
+.sidebar__sidebarSocialMediaIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.sidebar__sidebarContactDetailsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.5rem;
+  width: 100%;
+}
+.sidebar__sidebarGoogleMapsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 1rem;
+  width: 100%;
+}
+.sidebar__sidebarIframeGoogle {
+  display: block;
+  width: min(100%, 45rem);
+  height: auto;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #7C8D72;
+  padding: 5rem 1rem 1rem;
+}
+.footer__footerContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0rem;
+  width: min(100%, 45rem);
+}
+.footer__footerHr {
+  background: linear-gradient(to right, transparent 5%, rgba(48, 35, 24, 0.25) 20%, #302318, rgba(48, 35, 24, 0.25) 80%, transparent 95%);
+  background-size: cover;
+  border: none;
+  width: 100%;
+  height: 1px;
+  padding: 0;
+  margin: 2.5rem 0 2rem;
+}
+.footer__logoFigure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 1rem;
+}
+.footer__logoImage {
+  display: block;
+  width: 20rem;
+  height: auto;
+}
+.footer__logoFigcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.25rem;
+}
+.footer__footerSocialMedia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.5rem;
+  width: 100%;
+}
+.footer__footerSocialMediaIconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 3rem;
+}
+.footer__footerSocialMediaIcon {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 0.75rem;
+}
+.footer__footerNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.5rem;
+  width: 100%;
+}
+.footer__footerLegalNoticeBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.5rem;
+  width: 100%;
+}
+.footer__footerContactDetailsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 0.5rem;
+  width: 100%;
+}
+.footer__footerCopyAndDevBox {
+  width: 100%;
+}
+
+.header {
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: url("../img/WebsiteImages/ArkWoodProductsHeroBackGround.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 95vh;
+  padding: 1rem;
+}
+.hero__heroContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: min(100%, 45rem);
+}
+.hero__heroPrimaryHeading {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-75%);
+}
+.hero__heroHeadingItem {
+  display: block;
+}
+.hero__headingLogoBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 75%;
+  height: 15rem;
+  margin: 0 auto;
+  position: relative;
+}
+.hero__heroHeadingLogoImg {
+  width: 13rem;
+  height: 13rem;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-5%);
+}
+.hero__btnWrapper {
+  padding: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 1rem 0rem;
+}
+.main__mainContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 5rem;
+  width: min(100%, 45rem);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.about__aboutImgContainer {
+  position: relative;
+  width: 100%;
+  height: 70vw;
+}
+@media (min-width: 500px) {
+  .about__aboutImgContainer {
+    height: 33rem;
+  }
+}
+.about__aboutImg {
+  display: block;
+  background-color: #DEDED3;
+  border: 2px solid #263322;
+  box-shadow: 0 0 15px 1px rgba(38, 51, 34, 0.45);
+  width: 45%;
+  height: auto;
+  padding: 1rem;
+}
+.about__aboutImgWoodStack {
+  width: 70%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 100;
+}
+.about__aboutImgGate {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  z-index: 200;
+}
+.about__aboutImgFactory {
+  width: 40%;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  z-index: 100;
+}
+.about__aboutImgKitchen {
+  width: 30%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  z-index: 200;
+}
+.about__aboutImgToolWall {
+  width: 70%;
+  position: absolute;
+  top: 13%;
+  left: 10%;
+  z-index: 100;
+}
+.about__aboutImgVarnish {
+  width: 30%;
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  z-index: 200;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 3rem;
+  position: relative;
+}
+.products__productsSteakBoardsBox, .products__productsKitchenWorkTopsBox, .products__productsGardenGatesBox, .products__productsDeckingBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  gap: 1.5rem;
+}
+.products__productsImg {
+  display: block;
+  background-color: #DEDED3;
+  border: 2px solid #263322;
+  box-shadow: 0 0 15px 1px rgba(38, 51, 34, 0.45);
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+.products__productsImgWoodStack {
+  width: 70%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 100;
+}
+.products__productsImgGate {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  z-index: 200;
+}
+.products__productsImgFactory {
+  width: 40%;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  z-index: 100;
+}
+.products__productsImgKitchen {
+  width: 30%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  z-index: 200;
+}
+.products__productsImgToolWall {
+  width: 70%;
+  position: absolute;
+  top: 13%;
+  left: 10%;
+  z-index: 100;
+}
+.products__productsImgVarnish {
+  width: 30%;
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  z-index: 200;
+}
+
+.navbarSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7C8D72;
+  padding: 1rem 2rem;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.6s;
+}
+@media (min-width: 37.5em) {
+  .navbarSection {
+    padding: 1rem 4rem;
+  }
+}
+@media (min-width: 2000px) {
+  .navbarSection {
+    margin: 0 auto;
+    max-width: 2000px;
+  }
+}
+
+.navbar--background {
+  background-color: #7C8D72;
+  border-bottom: 1px solid #97734A;
+}
+
+/*# sourceMappingURL=styles.comp.css.map */
